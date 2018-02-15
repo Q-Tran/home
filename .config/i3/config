@@ -1,0 +1,102 @@
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+for_window [class="^.*"] border pixel 0
+smart_borders on
+smart_gaps on
+gaps inner 25
+exec --no-startup-id nm-applet
+new_window pixel 0
+focus_follows_mouse no
+
+set $mod Mod1
+set $down j
+set $up k
+set $right
+set $left h
+
+# Program hotkeys
+bindsym $mod+d exec dmenu_run
+bindsym $mod+c exec chromium
+bindsym $mod+Return exec urxvt
+bindsym $mod+q kill
+
+# Default startup programs
+exec --no-startup-id redshift -t 5500K:2000K
+exec --no-startup-id feh --bg-scale /home/sen/Images/Backgrounds/arch.jpg
+
+# Function keys
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+font pango:monospace 8
+floating_modifier $mod
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+	height 30
+	mode hide
+        status_command i3status
+	modifier $mod
+	font Source Code Pro 18
+}

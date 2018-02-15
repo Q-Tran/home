@@ -1,0 +1,44 @@
+urxvt*transparent: true
+urxvt*shading: 30
+
+URxvt.font: xft:Source Code Pro:regular:size=18
+URxvt.scrollBar: false
+! url-select (part of urxvt-perls package)
+URxvt.url-select.autocopy:  true
+URxvt.url-select.button:    2
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+
+! disable the stupid ctrl+shift 'feature'
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Molokai theme
+
+URxvt*background: #101010
+URxvt*foreground: #d0d0d0
+URxvt*color0: #101010
+URxvt*color1: #960050
+URxvt*color2: #66aa11
+URxvt*color3: #c47f2c
+URxvt*color4: #30309b
+URxvt*color5: #7e40a5
+URxvt*color6: #3579a8
+URxvt*color7: #9999aa
+URxvt*color8: #303030
+URxvt*color9: #ff0090
+URxvt*color10: #80ff00
+URxvt*color11: #ffba68
+URxvt*color12: #5f5fee
+URxvt*color13: #bb88dd
+URxvt*color14: #4eb4fa
+URxvt*color15: #d0d0d0
+
+! ROFI Color theme
+
+rofi.color-enabled:                  true
+rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #FAC863 ,  #1B2B34
+rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+rofi.color-window:                   argb:ee222222,  #FAC863 ,  #FAC863
+rofi.separator-style:                solid
